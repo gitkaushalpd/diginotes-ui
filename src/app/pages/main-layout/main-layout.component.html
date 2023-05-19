@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">Logo</a>
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link 2</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="row">
+  <div class="col-md-4">
+    <!-- <div class="card">
+      <div class="card-header">Notes</div>
+      <div class="card-body">
+        <h5 class="card-title">
+          <input class="title-text" placeholder=" Note title" />
+        </h5>
+        <input type=" text" class="note-text" placeholder=" Write here" />
+        <br />
+      </div>
+      <div class="card-footer">
+        <div class="btn-group">
+          <button class="btn btn-success">Save</button>
+        </div>
+      </div>
+    </div> -->
+    <!-- <form [formGroup]="noteform" (ngSubmit)="onSubmit()"> -->
+    <div class="card bg-light text-dark">
+      <div class="card-body">
+        <form [formGroup]="noteform" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="address">Title </label>
+            <input id="address" type="text" formControlName="name" />
+          </div>
+
+          <div class="form-group">
+            <label
+              class="control-label col-sm-3"
+              for="address"
+              placeholder=" write here"
+              >Text Notes
+            </label>
+            <input id="text" type="text" formControlName="text" />
+          </div>
+
+          <button class="btn btn-primary" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">Notelist</div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Text</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <tr *ngFor="let node of noteList"> -->
+
+            <td>{{ noteList.name }}</td>
+            <td>{{ noteList.text }}</td>
+            <td>
+              <!-- <button class="btn" type="submit" (click)="deleteItem(item)">
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                </button> -->
+            </td>
+            <!-- </tr> -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
